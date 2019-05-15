@@ -1,11 +1,5 @@
 <?php
-function generatePassword($str){
-    $numChars = strlen($str);
-
-    return substr($str, rand(1, $numChars) - 1, 1);
-}
-
-function generatePasswordNew($len, $type){
+function generatePassword($len, $type){
     $str = '';
     for ($i = 1; $i < $len; $i++) {
         if ($type == 'firstname') $str .= chr(rand(65,69));
@@ -37,10 +31,8 @@ $lastnames = [
 $students = [];
 
 foreach ($firstnames as $value) {
-    // $keyFirstName = generatePassword('ABCDE');
-    // $keyLastName = generatePassword('KLMNO');
-    $keyFirstName = generatePasswordNew(5, 'firstname');
-    $keyLastName = generatePasswordNew(5, 'lastname');
+    $keyFirstName = generatePassword(5, 'firstname');
+    $keyLastName = generatePassword(5, 'lastname');
     if (isset($firstnames[$keyFirstName][0]) && isset($lastnames[$keyLastName][0])) {
         $comment = '';
         switch (true) {
