@@ -69,12 +69,13 @@ foreach ($firstnames as $value) {
     }
 }
 
+/*
 echo "<pre>";
 print_r($students);
 echo "</pre>";
+*/
 
-foreach ($students as $value) {
-    echo "<pre>";
-    print_r($value['comment']);
-    echo "</pre>";
+foreach ($students as $key => $value) {
+    echo "{$key} - {$value['comment']}";
+    echo "<br>";
 }
