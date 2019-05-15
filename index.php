@@ -37,8 +37,9 @@ $lastnames = [
 $students = [];
 
 foreach ($firstnames as $value) {
-    $keyFirstName = generatePassword(5, 'firstname');
-    $keyLastName = generatePassword(5, 'lastname');
+    $num = rand(1, 10);
+    $keyFirstName = generatePassword($num, 'firstname');
+    $keyLastName = generatePassword($num, 'lastname');
     if (isset($firstnames[$keyFirstName][0]) && isset($lastnames[$keyLastName][0])) {
         $comment = '';
         switch (true) {
