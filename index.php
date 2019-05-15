@@ -59,7 +59,6 @@ foreach ($firstnames as $value) {
                 break;
         }
 
-
         $students[] = [
             'number' => random_int(1, 50),
             'firstname' => $firstnames[$keyFirstName][0],
@@ -73,3 +72,8 @@ echo "<pre>";
 print_r($students);
 echo "</pre>";
 
+foreach ($students as $value) {
+    echo "<pre>";
+    print_r($value['comment']);
+    echo "</pre>";
+}
