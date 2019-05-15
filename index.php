@@ -11,6 +11,12 @@ function generatePassword($len, $type){
     return substr($str, rand(1, $numChars) - 1, 1);
 }
 
+$parts = [
+    'Kuulostaa vaikuttavalta!',
+    'Onpas harvinainen nimi!',
+    'Miten kaunis nimi!',
+    'Hienon kuuloinen nimi.'
+];
 
 $firstnames = [
     'A' => ['Anniina', 'vowel'],
@@ -37,19 +43,19 @@ foreach ($firstnames as $value) {
         $comment = '';
         switch (true) {
             case ($firstnames[$keyFirstName][1] == 'cons' && $lastnames[$keyLastName][1] == 'cons'):
-                $comment = 'Järjestysnro oppilaan nimi on $firstnames[$keyFirstName][1] $lastnames[$keyLastName][1]. Kuulostaa vaikuttavalta!';
+                $comment = "Järjestysnro oppilaan nimi on {$firstnames[$keyFirstName][0]} {$lastnames[$keyLastName][0]}. {$parts[0]}";
                 break;
 
             case ($firstnames[$keyFirstName][1] == 'cons' && $lastnames[$keyLastName][1] == 'vowel'):
-                $comment = 'Järjestysnro oppilaan nimi on $firstnames[$keyFirstName][1] $lastnames[$keyLastName][1]. Onpas harvinainen nimi!';
+                $comment = "Järjestysnro oppilaan nimi on {$firstnames[$keyFirstName][0]} {$lastnames[$keyLastName][0]}. {$parts[1]}";
                 break;
 
             case ($firstnames[$keyFirstName][1] == 'vowel' && $lastnames[$keyLastName][1] == 'vowel'):
-                $comment = 'Järjestysnro oppilaan nimi on $firstnames[$keyFirstName][1] $lastnames[$keyLastName][1]. Miten kaunis nimi!';
+                $comment = "Järjestysnro oppilaan nimi on {$firstnames[$keyFirstName][0]} {$lastnames[$keyLastName][0]}. {$parts[2]}";
                 break;
 
             case ($firstnames[$keyFirstName][1] == 'vowel' && $lastnames[$keyLastName][1] == 'cons'):
-                $comment = 'Järjestysnro oppilaan nimi on $firstnames[$keyFirstName][1] $lastnames[$keyLastName][1]. Hienon kuuloinen nimi.';
+                $comment = "Järjestysnro oppilaan nimi on {$firstnames[$keyFirstName][0]} {$lastnames[$keyLastName][0]}. {$parts[3]}";
                 break;
         }
 
